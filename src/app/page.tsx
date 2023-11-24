@@ -34,25 +34,23 @@ export default () => {
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setECountries((prev) => prev.map((c) => ({...c, checked: e.target.checked})))} />
             <label htmlFor="check-all">Select All</label>
             <ul>
-                {eCountries.map((country) => {
-                    return (
-                        <li key={`${country.id}`}>
-                            <input 
-                                type="checkbox"
-                                checked={country.checked}
-                                name={`country-${country.id}`}
-                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                                    setECountries((prev) => prev.map((c) => {
-                                        if (c.id == country.id)
-                                            c.checked = e.target.checked;
+                {eCountries.map((country) => (
+                    <li key={`${country.id}`}>
+                        <input 
+                            type="checkbox"
+                            checked={country.checked}
+                            name={`country-${country.id}`}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                                setECountries((prev) => prev.map((c) => {
+                                    if (c.id == country.id)
+                                        c.checked = e.target.checked;
 
-                                        return c;
-                                    }))
-                                }} />
-                            <label htmlFor={`country-${country.id}`}>{country.name}</label>
-                        </li>
-                    );
-                })}
+                                    return c;
+                                }))
+                            }} />
+                        <label htmlFor={`country-${country.id}`}>{country.name}</label>
+                    </li>
+                ))}
             </ul>
         </main>
     );
