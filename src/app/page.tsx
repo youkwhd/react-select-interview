@@ -31,6 +31,7 @@ export default () => {
             <input 
                 type="checkbox"
                 name="check-all"
+                checked={eCountries.every((c) => c.checked)}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                     setECountries((prev) => prev.map((c) => ({...c, checked: e.target.checked})))
                 }} />
@@ -44,7 +45,12 @@ export default () => {
                                 checked={country.checked}
                                 name={`country-${country.id}`}
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                                    console.log(e.target.checked);
+                                    setECountries((prev) => prev.map((c) => {
+                                        if (c.id == country.id)
+                                            c.checked = e.target.checked;
+
+                                        return c;
+                                    }))
                                 }} />
                             <label htmlFor={`country-${country.id}`}>{country.name}</label>
                         </li>
