@@ -22,7 +22,6 @@ const countries: Country[] = [
     },
 ];
 
-
 export default () => {
     const [eCountries, setECountries] = useState(countries.map((c: Country) => ({...c, checked: false})));
     
@@ -56,5 +55,5 @@ export default () => {
                 })}
             </ul>
         </main>
-    )
-}
+    );
+};
