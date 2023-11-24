@@ -42,7 +42,7 @@ export default () => {
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setECountries((prev) => prev.map((c) => ({...c, checked: e.target.checked})))} />
             <label htmlFor="check-all">Select All</label>
             <ul>
-                {eCountries.map((country) => (
+                {eCountries.map((country: Country & {checked: boolean}) => (
                     <li key={`${country.id}`}>
                         <input 
                             type="checkbox"
