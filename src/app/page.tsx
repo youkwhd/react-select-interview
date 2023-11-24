@@ -32,9 +32,7 @@ export default () => {
                 type="checkbox"
                 name="check-all"
                 checked={eCountries.every((c) => c.checked)}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                    setECountries((prev) => prev.map((c) => ({...c, checked: e.target.checked})))
-                }} />
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setECountries((prev) => prev.map((c) => ({...c, checked: e.target.checked})))} />
             <label htmlFor="check-all">Select All</label>
             <ul>
                 {eCountries.map((country) => {
