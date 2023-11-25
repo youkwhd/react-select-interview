@@ -32,8 +32,7 @@ export default () => {
                 React Select Interview
             </h1>
             <p>
-                <Link href="https://github.com/youkwhd">youkwhd</Link>'s solution to a react interview question taken from <Link href="https://www.reddit.com/r/reactjs/comments/181bwix/please_help_why_was_i_rejected_in_my_frontend_1st/
-">this reddit post</Link>.
+                <Link href="https://github.com/youkwhd">youkwhd</Link>'s solution to a react interview question taken from <Link href="https://www.reddit.com/r/reactjs/comments/181bwix/please_help_why_was_i_rejected_in_my_frontend_1st/">this reddit post</Link>.
             </p>
             <input 
                 type="checkbox"
